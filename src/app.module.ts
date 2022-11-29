@@ -11,7 +11,7 @@ import { AuthModule } from './auth/auth.module';
 @Module({
   imports: [
     ConfigModule.forRoot({ load: [() => configuration] }),
-    MongooseModule.forRoot("mongodb+srv://bboyecuachi:Sacrox.123@test-apps.pilnahp.mongodb.net/?retryWrites=true&w=majority"),
+    MongooseModule.forRoot(process.env.MONGODB ?? ""),
     TransfersModule,
     UsersModule,
     AuthModule,

@@ -34,9 +34,7 @@ export class TransfersController {
     @Param('id') id: string,
     @Req() req: any,
   ): Promise<TransferDto> {
-    const user = req.user as UserDto;
-    console.log("transfer findOne: ", user, id);
-    
+    const user = req.user as UserDto;    
     return this.transfersService.findOne(user, id);
   }
 }
